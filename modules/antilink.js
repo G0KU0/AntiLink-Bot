@@ -19,14 +19,14 @@ module.exports = async (client, message) => {
             if (logChannel) {
                 const embed = new EmbedBuilder()
                     .setColor("#ff0000")
-                    .setTitle("🚨 **Link Blocked**")
-                    .setDescription(`🔗 **The user <@${message.author.id}> tried to send a link.**`)
+                    .setTitle("🚨 **Link blokkolva**")
+                    .setDescription(`🔗 **A felhasználó <@${message.author.id}> megpróbált linket küldeni.**`)
                     .addFields(
-                        { name: "📌 User", value: `<@${message.author.id}>`, inline: true },
-                        { name: "🕒 Hour", value: `<t:${Math.floor(Date.now() / 1000)}:F>`, inline: true },
-                        { name: "🔗 Message", value: `\`\`\`${message.content}\`\`\`` }
+                        { name: "📌 Felhasználó", value: `<@${message.author.id}>`, inline: true },
+                        { name: "🕒 Óra", value: `<t:${Math.floor(Date.now() / 1000)}:F>`, inline: true },
+                        { name: "🔗 Üzenet", value: `\`\`\`${message.content}\`\`\`` }
                     )
-                    .setFooter({ text: "AntiLink System", iconURL: client.user.displayAvatarURL() })
+                    .setFooter({ text: "AntiLink rendszer", iconURL: client.user.displayAvatarURL() })
                     .setTimestamp();
 
                 logChannel.send({ embeds: [embed] }).catch(() => {});
